@@ -1,8 +1,8 @@
 [user]
-	name = Samnang Chhun
-  email = samnang.chhun@gmail.com
+	name = kuyseng
+  email = kuyseng@gmail.com
 [github]
-  user = samnang
+  user = kuyseng
   token =
 [color]
   ui = true
@@ -17,5 +17,10 @@
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = ls-file
   graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+  track = update-index --no-assume-unchanged
+  untrack = update-index --assume-unchanged
+  ls-untrack = ls-files -v | grep "^[[:lower:]]"
+  stash0 = stash apply stash@{0}
+  stash1 = stash apply stash@{1}
 [core]
-	excludesfile = /Users/samnang/.gitignore_global
+	excludesfile = ~/.gitignore_global

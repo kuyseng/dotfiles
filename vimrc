@@ -210,3 +210,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 if filereadable(expand('~/.vimrc.local'))
   so ~/.vimrc.local
 endif
+
+"# 1303290923: make 'find' search file in the current project
+set path=$PWD/**
