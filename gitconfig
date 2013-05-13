@@ -13,7 +13,7 @@
 	co = checkout
 	df = diff
 	lg = log -p
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit -n 15
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = ls-file
   graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
@@ -24,3 +24,5 @@
   stash1 = stash apply stash@{1}
 [core]
 	excludesfile = ~/.gitignore_global
+[merge]
+	tool = vimdiff

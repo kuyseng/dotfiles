@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone git://github.com/samnang/dotfiles.git ~/.dotfiles
+git clone git://github.com/kuyseng/dotfiles.git ~/.dotfiles
 
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/vimrc ~/.vimrc
