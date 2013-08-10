@@ -241,3 +241,9 @@ endif
 
 "# 1303290923: make 'find' search file in the current project
 set path=$PWD/**
+inoremap jj <ESC>
+
+set background=dark
+let g:solarized_termcolors = 256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"

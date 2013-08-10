@@ -15,14 +15,21 @@
 	lg = log -p
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit -n 15
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	ls = ls-file
+	ls = ls-files -v
   graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
-  track = update-index --no-assume-unchanged
-  untrack = update-index --assume-unchanged
-  ls-untrack = ls-files -v | grep "^[[:lower:]]"
+  ;track-gem = update-index --no-assume-unchanged Gemfile Gemfile.lock
+  ;untrack-gem = update-index --assume-unchanged Gemfile Gemfile.lock
+  track-api = update-index --no-assume-unchanged app/models/api_portal.rb app/models/api_listing.rb
+  track-api2 = update-index --no-assume-unchanged app/models/portal.rb app/models/listing.rb
+  untrack-api = update-index --assume-unchanged app/models/api_portal.rb app/models/api_listing.rb app/models/portal.rb app/models/listing.rb
+  untrack-api2 = update-index --assume-unchanged app/models/portal.rb app/models/listing.rb
+  ls-untrack = ls-files -v | grep "^[[:lower:]]" ;not working with | grep
   stash0 = stash apply stash@{0}
   stash1 = stash apply stash@{1}
+  stash2 = stash apply stash@{2}
+  stash3 = stash apply stash@{3}
 [core]
 	excludesfile = ~/.gitignore_global
+	editor = vim
 [merge]
 	tool = vimdiff

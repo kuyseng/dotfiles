@@ -20,8 +20,12 @@ alias tree='tree -L 1'
 
 
 # Custom alias
-alias work='cd ~/workspace/'
 #alias proxy='ssh -L 8765:localhost:8765 pair@184.106.240.141'
 
-alias migrate='rake db:migrate && rake db:test:prepare'
+alias migrate='rake db:migrate && rake db:migration RAILS_ENV=test'
 
+CDPATH=.:~:~/workspace/:~/workspace/MakeHandDirty/
+alias tom='sudo /etc/init.d/tomcat7 restart'
+alias work='cd ~/workspace/yoolk_core/engines/service_catalog'
+
+alias irbgem='gem install map_by_method interactive_editor looksee awesome_print fancy_irb'
