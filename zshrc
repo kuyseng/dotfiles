@@ -23,7 +23,7 @@ alias zshconfig="vim ~/.zshrc"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
 # DISABLE_CORRECTION="true"
@@ -48,7 +48,28 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 ##############################
 export EDITOR="vim"
+# start in command mode
+#zle-line-init() { zle -K vicmd; }
+#zle -N zle-line-init
 
+# show cursor related to command and insert mode
+vim_ins_mode="[INS]"
+vim_cmd_mode="[CMD]"
+vim_mode=$vim_ins_mode
+
+function zle-keymap-select {
+  vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+  zle reset-prompt
+}
+zle -N zle-keymap-select
+
+function zle-line-finish {
+  vim_mode=$vim_ins_mode
+}
+zle -N zle-line-finish
+
+RPROMPT='${vim_mode}'
+#end
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # config use vim in zsh
@@ -80,7 +101,8 @@ alias tom=''
 alias mongo_repair='rvmsudo rake mongo:repair'
 
 # make vim in tmux with correct colortheme ##
-alias tmux='tmux -2'
+#alias tmux='tmux -2'
+[ -z "$TMUX" ] && export TERM=xterm-256color
 
 ######Zshell Alias#######
 # global -g (appear anywhere)

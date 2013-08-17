@@ -102,20 +102,17 @@ set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 
-set t_Co=256                      " Set terminal to 256 colors
-set background=dark
-colorscheme Tomorrow-Night-Bright
+"set t_Co=256                      " Set terminal to 256 colors
+"set background=dark
+"colorscheme Tomorrow-Night-Bright
 "
 "# railscasts make bg transparency
 "set t_Co=256                      " Set terminal to 256 colors
 "colorscheme railscasts
 
 
-"let g:molokai_original = 1
-"let g:rehash256 = 1
-"set t_Co=256                      " Set terminal to 256 colors
-"set background=dark
-"colorscheme robokai
+set t_Co=256                      " Set terminal to 256 olors
+colorscheme molokai
 
 
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
