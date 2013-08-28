@@ -43,6 +43,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
 
+Bundle 'unimpaired.vim'
+Bundle 'vim-indent-object'
 " *********************************************
 " *                 Settings                  *
 " *********************************************
@@ -102,17 +104,9 @@ set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 
-"set t_Co=256                      " Set terminal to 256 colors
-"set background=dark
-"colorscheme Tomorrow-Night-Bright
-"
-"# railscasts make bg transparency
-"set t_Co=256                      " Set terminal to 256 colors
-"colorscheme railscasts
-
-
-set t_Co=256                      " Set terminal to 256 olors
-colorscheme molokai
+set t_Co=256                      " Set terminal to 256 colors
+set background=dark
+colorscheme Tomorrow-Night-Bright
 
 
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
@@ -245,15 +239,24 @@ highlight clear SignColumn
 " *********************************************
 " *        Local Vimrc Customization          *
 " *********************************************
-if filereadable(expand('~/.vimrc.local'))
-  so ~/.vimrc.local
-endif
 
 "# 1303290923: make 'find' search file in the current project
 set path=$PWD/**
 inoremap jj <ESC>
 
-set background=dark
-let g:solarized_termcolors = 256
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
+"# 130821: new tab and close tabe
+if version >= 700
+    map <C-t>n <Esc>:tabnew<CR>
+    map <C-t>x <Esc>:tabclose<CR>
+    "map <C-w> <Esc>:tabclose<CR> " it's for change window layout
+endif
+
+"1308241133: delete All.
+nmap dA :%d<CR>
+
+"toggle set number mode
+set number
+nnoremap <F3> :set nonumber!<CR> 
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee % > /dev/null

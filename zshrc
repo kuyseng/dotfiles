@@ -53,29 +53,31 @@ export EDITOR="vim"
 #zle -N zle-line-init
 
 # show cursor related to command and insert mode
-vim_ins_mode="[INS]"
-vim_cmd_mode="[CMD]"
-vim_mode=$vim_ins_mode
 
-function zle-keymap-select {
-  vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-  zle reset-prompt
-}
-zle -N zle-keymap-select
+#vim_ins_mode="[INS]"
+#vim_cmd_mode="[CMD]"
+#vim_mode=$vim_ins_mode
 
-function zle-line-finish {
-  vim_mode=$vim_ins_mode
-}
-zle -N zle-line-finish
+#function zle-keymap-select {
+  #vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+  #zle reset-prompt
+#}
+#zle -N zle-keymap-select
 
-RPROMPT='${vim_mode}'
+#function zle-line-finish {
+  #vim_mode=$vim_ins_mode
+#}
+#zle -N zle-line-finish
+
+#RPROMPT='${vim_mode}'
+
 #end
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # config use vim in zsh
-bindkey -v
-bindkey -M viins 'jj' vi-cmd-mode
-bindkey '^R' history-incremental-search-backward
+#bindkey -v
+#bindkey -M viins 'jj' vi-cmd-mode
+#bindkey '^R' history-incremental-search-backward
 
 #My config hahah :D
 CDPATH=.:~:~/workspace/:~/workspace/MakeHandDirty/
@@ -107,7 +109,12 @@ alias mongo_repair='rvmsudo rake mongo:repair'
 ######Zshell Alias#######
 # global -g (appear anywhere)
 alias -g gp="| grep -i" # e.g. ps ax gp ruby #=> ps ax | grep -i ruby
+alias -g t="RAILS_ENV=test" 
 # suffix -s (open with..)
 alias -s rb=vim         # e.g. test.rb #=> vim test.rb
 alias -s html='chromium-browser'
 
+# load tmux auto
+#if [[ ! $TERM =~ screen ]]; then
+    #exec tmux
+#fi
