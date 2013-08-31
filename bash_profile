@@ -11,13 +11,6 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
-
-[[ -s "/Users/samnang/.rvm/scripts/rvm" ]] && source "/Users/samnang/.rvm/scripts/rvm"
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-
 function prompt {
 	local LIGHT_RED="\[\033[1;31m\]"
 	local LIGHT_GREEN="\[\033[1;32m\]"
@@ -36,3 +29,4 @@ function prompt {
 #call the prompt function to set things in motion
 prompt
 
+source /home/administrator/.rvm/scripts/rvm
