@@ -256,7 +256,32 @@ nmap dA :%d<CR>
 
 "toggle set number mode
 set number
-nnoremap <F3> :set nonumber!<CR> 
+nnoremap <F3> :set nonumber!<CR>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee % > /dev/null
+
+"1308301011: take from rails best practice.
+" Strip trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+nmap <leader>l :set list!<cr>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸–,eol:¶,trail:❖,nbsp:¬
+
+"1308301045: my map key
+map <leader>R :source ~/.vimrc<cr>
+map <leader>cl :set cursorline!<cr>
+map <leader>cc :set cursorcolumn!<cr>
+
