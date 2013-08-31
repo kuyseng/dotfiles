@@ -16,4 +16,6 @@ ln -s ~/.dotfiles/ackrc ~/.ackrc
 
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 
+ln -s ~/.dotfiles/fun.yml ~/.tmuxinator/fun.yml
+
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
