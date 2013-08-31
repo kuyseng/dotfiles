@@ -15,7 +15,7 @@ alias zshconfig="vim ~/.zshrc"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true" 
+# DISABLE_AUTO_UPDATE="true"
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
 
@@ -73,6 +73,7 @@ export EDITOR="vim"
 
 #end
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # config use vim in zsh
 #bindkey -v
@@ -84,7 +85,7 @@ CDPATH=.:~:~/workspace/:~/workspace/MakeHandDirty/
 
 autoload zmv
 #Alias (Normal Alias)
-alias x='exit'                                                                                                                     
+alias x='exit'
 alias q='exit'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -109,7 +110,7 @@ alias mongo_repair='rvmsudo rake mongo:repair'
 ######Zshell Alias#######
 # global -g (appear anywhere)
 alias -g gp="| grep -i" # e.g. ps ax gp ruby #=> ps ax | grep -i ruby
-alias -g t="RAILS_ENV=test" 
+alias -g t="RAILS_ENV=test"
 # suffix -s (open with..)
 alias -s rb=vim         # e.g. test.rb #=> vim test.rb
 alias -s html='chromium-browser'
