@@ -28,6 +28,7 @@
   stash1 = stash apply stash@{1}
   stash2 = stash apply stash@{2}
   stash3 = stash apply stash@{3}
+	amend = commit -C HEAD --amend
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
