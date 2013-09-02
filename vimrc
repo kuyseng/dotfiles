@@ -287,3 +287,33 @@ map <leader>cc :set cursorcolumn!<cr>
 
 "1309021051: map key to refrsh ctag
 :nnoremap <f5> :!ctags -R<CR>
+
+" Ctagbar @https://github.com/majutsushi/tagbar/wiki
+"= Ruby
+let g:tagbar_type_ruby = {
+      \ 'kinds' : [
+      \ 'm:modules',
+      \ 'c:classes',
+      \ 'd:describes',
+      \ 'C:contexts',
+      \ 'f:methods',
+      \ 'F:singleton methods'
+      \ ]
+      \ }
+"= Coffee
+" need 'gem install CoffeeTags  @https://github.com/lukaszkorecki/CoffeeTags
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
