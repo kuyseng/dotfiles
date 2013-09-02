@@ -32,7 +32,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'sandeepravi/refactor-rails.vim'
 Bundle 'terryma/vim-expand-region'
-Bundle 'ngmy/vim-rubocop'
+"Bundle 'ngmy/vim-rubocop'
 Bundle 'git://gist.github.com/287147.git'
 
 Bundle 'vim-ruby/vim-ruby'
@@ -285,3 +285,5 @@ map <leader>R :source ~/.vimrc<cr>
 map <leader>cl :set cursorline!<cr>
 map <leader>cc :set cursorcolumn!<cr>
 
+"1309021051: map key to refrsh ctag
+:nnoremap <f5> :!ctags -R<CR>
