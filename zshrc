@@ -102,10 +102,12 @@ alias ls='ls -G'
 
 alias tom=''
 alias mongo_repair='rvmsudo rake mongo:repair'
+alias turbo='tmuxinator turbo'
 
 # make vim in tmux with correct colortheme ##
 #alias tmux='tmux -2'
 [ -z "$TMUX" ] && export TERM=xterm-256color
+
 
 ######Zshell Alias#######
 # global -g (appear anywhere)
