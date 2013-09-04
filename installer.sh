@@ -17,6 +17,5 @@ ln -s ~/.dotfiles/ackrc ~/.ackrc
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 
 ln -s ~/.dotfiles/tmuxinator/ ~/.tmuxinator
-ln -s ~/.dotfiles/ctags ~/.ctags
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
