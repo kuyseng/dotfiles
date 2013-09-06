@@ -284,6 +284,9 @@ set listchars=tab:▸–,eol:¶,trail:❖,nbsp:¬
 map <leader>R :source ~/.vimrc<cr>
 map <leader>ll :set cursorline!<cr>
 map <leader>kk :set cursorcolumn!<cr>
+map <leader>s :w<cr>
+map <leader>sq :wq<cr>
+map <leader>q :q<cr>
 
 "1309021051: map key to refrsh ctag
 :nnoremap <f5> :!ctags -R<CR>
