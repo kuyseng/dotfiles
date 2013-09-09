@@ -291,6 +291,8 @@ map <leader>q :q<cr>
 
 "1309021051: map key to refresh ctag
 :nnoremap <f5> :!ctags -R<CR>
+"I want to use shift+F5, <s-f5> it's not work
+:nnoremap <leader>rr :!ctags -R . ~/.rvm/gems/ruby-1.9.3-p392@yoolk_core/<CR>
 
 " Ctagbar @https://github.com/majutsushi/tagbar/wiki
 "= Ruby
