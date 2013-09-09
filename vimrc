@@ -45,6 +45,7 @@ Bundle 'othree/html5.vim'
 
 Bundle 'unimpaired.vim'
 Bundle 'vim-indent-object'
+Bundle 'BufOnly.vim'
 " *********************************************
 " *                 Settings                  *
 " *********************************************
@@ -288,7 +289,7 @@ map <leader>s :w<cr>
 map <leader>sq :wq<cr>
 map <leader>q :q<cr>
 
-"1309021051: map key to refrsh ctag
+"1309021051: map key to refresh ctag
 :nnoremap <f5> :!ctags -R<CR>
 
 " Ctagbar @https://github.com/majutsushi/tagbar/wiki
