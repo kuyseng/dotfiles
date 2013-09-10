@@ -289,6 +289,10 @@ map <leader>s :w<cr>
 map <leader>sq :wq<cr>
 map <leader>q :q<cr>
 
+vmap <leader>y :w !xclip -sel clip -i<cr><cr>
+" "*p is slow with a lot of data.
+map <leader>p :r !xclip -sel clip -o<cr>
+
 "1309021051: map key to refresh ctag
 :nnoremap <f5> :!ctags -R<CR>
 "I want to use shift+F5, <s-f5> it's not work
