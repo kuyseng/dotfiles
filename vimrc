@@ -46,6 +46,8 @@ Bundle 'othree/html5.vim'
 Bundle 'unimpaired.vim'
 Bundle 'vim-indent-object'
 Bundle 'BufOnly.vim'
+Bundle 'repeat.vim'
+
 " *********************************************
 " *                 Settings                  *
 " *********************************************
