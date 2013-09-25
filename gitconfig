@@ -9,7 +9,6 @@
 [alias]
 	st = status
 	ci = commit
-	br = branch
 	co = checkout
 	df = diff
   dc = diff --cached
@@ -34,6 +33,8 @@
   #https://github.com/garybernhardt/dotfiles/blob/master/.gitconfig
   aa = add --all
 
+  br = branch --no-merge master # show only branches not merged into master
+  bra = branch                  # show all branches
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
