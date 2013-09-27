@@ -1,0 +1,14 @@
+rubygems-bundler
+bundler
+rake
+rvm
+
+/*irb*/
+map_by_method
+interactive_editor
+looksee has
+awesome_print
+fancy_irb
+
+/*vim*/
+gem-browse

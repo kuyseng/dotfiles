@@ -16,6 +16,9 @@ ln -s ~/.dotfiles/ackrc ~/.ackrc
 
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 
+mv ~/.rvm/gemsets/global.gems ~/.rvm/gemsets/global.gems.original
+ln -s ~/rvm/gemsets/global.gems ~/.rvm/gemsets/global.gems
+
 ln -s ~/.dotfiles/tmuxinator/ ~/.tmuxinator
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
