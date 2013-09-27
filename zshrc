@@ -81,7 +81,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #bindkey '^R' history-incremental-search-backward
 
 #My config hahah :D
-CDPATH=.:~:~/workspace/:~/workspace/MakeHandDirty/
+CDPATH=.:~:~/Desktop:~/workspace/:~/workspace/MakeHandDirty/
 
 autoload zmv
 #Alias (Normal Alias)
