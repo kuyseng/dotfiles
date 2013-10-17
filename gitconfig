@@ -33,8 +33,9 @@
   #https://github.com/garybernhardt/dotfiles/blob/master/.gitconfig
   aa = add --all
 
-  br = branch --no-merge master # show only branches not merged into master
-  bra = branch                  # show all branches
+  br  = branch --no-merge master   # show only branches not merged into master
+  brs = branch --no-merge staging # show only branches not merged into staging
+  bra = branch                    # show all branches
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
