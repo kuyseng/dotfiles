@@ -103,6 +103,7 @@ alias ls='ls -G'
 alias tom=''
 alias mongo_repair='rvmsudo rake mongo:repair'
 alias turbo='tmuxinator turbo'
+alias spirit='tmuxinator turbo'
 
 # make vim in tmux with correct colortheme ##
 #alias tmux='tmux -2'
@@ -121,3 +122,18 @@ alias -s html='chromium-browser'
 #if [[ ! $TERM =~ screen ]]; then
     #exec tmux
 #fi
+#
+# function help to get shell built-in commands
+# http://rhydd.org/blog/zsh-help/
+#
+ help(){ #This function used to call the "bash" builtin. #bash -c "help $@"
+
+ #Better way: look it up in the man pages. I often look up "test" which doesn't give a usefull result,
+ #so I added that as a special case.
+ if [[ $1 == "test" ]]; then
+   man --pager="less -p'^CONDITIONAL EXPRESSIONS$'" zshall
+ else
+   man --pager="less -p'^ *$@ '" zshall
+ fi
+       }
+ #
