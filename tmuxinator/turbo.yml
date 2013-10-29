@@ -9,12 +9,12 @@ socket_name: turbo # Remove to use default socket
 tmux_options: -v -2 # Pass arguments to tmux
 windows:
   - editor:
-      pre: 
+      pre:
         - cd ~/workspace/yoolk_core/
-      panes: 
+      panes:
         - vim .
 
-  - git: 
+  - git:
       pre:
         - cd ~/workspace/yoolk_core/
         - rm tmux-*.log
@@ -22,18 +22,18 @@ windows:
       panes:
         - git st
 
-  - guard: cd ~/workspace/yoolk_core/engines/menu/
+  - guard: cd ~/workspace/yoolk_core/
+
+  - railsc:
+      pre:
+        - cd ~/workspace/yoolk_core/
+      panes:
+        - bundle exec rails c
 
   - railss:
-      pre: 
+      pre:
         - cd ~/workspace/yoolk_core/
       panes:
         - bundle exec rails s
 
-  - menu: 
-      pre: 
-        - cd ~/workspace/yoolk_menu/
-      panes:
-        - vim .
-
-  - zother: 
+  - zother:
