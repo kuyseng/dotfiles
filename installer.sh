@@ -15,6 +15,7 @@ ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/ackrc ~/.ackrc
 
 ln -s ~/.dotfiles/zshrc ~/.zshrc
+ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 
 mv ~/.rvm/gemsets/global.gems ~/.rvm/gemsets/global.gems.original
 ln -s ~/rvm/gemsets/global.gems ~/.rvm/gemsets/global.gems
