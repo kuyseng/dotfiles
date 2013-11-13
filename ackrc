@@ -4,5 +4,21 @@ html=.haml
 css=.sass,.scss
 --type-add
 js=.coffee
+--type-add
+ruby=
 --type-set
 coffee=.coffee
+
+# https://github.com/brynary/dotfiles/blob/master/ackrc
+--ignore-dir=cache
+--ignore-dir=tmp
+--ignore-dir=compiled
+--ignore-dir=gems
+--type-add=features=.feature
+--type-add=ruby=.ru
+--type-add=ruby=.rake
+--type-add=ruby=.haml
+--type-add=ruby=.gemspec
+--type-add=javascript=.json
+--sort-files
+--color
