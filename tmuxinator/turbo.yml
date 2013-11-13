@@ -22,7 +22,11 @@ windows:
       panes:
         - git st
 
-  - guard: cd ~/workspace/yoolk_core/
+  - guard:
+     pre:
+       - cd ~/workspace/yoolk_core/
+     panes:
+       - guard
 
   - railsc:
       pre:
@@ -35,5 +39,6 @@ windows:
         - cd ~/workspace/yoolk_core/
       panes:
         - bundle exec rails s
+        - zeus start
 
   - zother:
