@@ -141,3 +141,4 @@ alias -s html='chromium-browser'
  alias SD="sudo init 0 --verbose"
  alias RS="sudo init 6 --verbose" # == reboot
  alias xps="ssh -Y bentio@cambodia-yellowpages.dev"
+ alias off="xset dpms force off"
