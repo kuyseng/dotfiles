@@ -93,7 +93,7 @@ set sidescrolloff=7
 set splitbelow
 set splitright
 
-set mouse-=a
+set mouse=a
 set mousehide
 set ttymouse=xterm2
 set sidescroll=1
