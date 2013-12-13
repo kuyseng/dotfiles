@@ -17,10 +17,9 @@ windows:
   - git:
       pre:
         - cd ~/workspace/yoolk_core/
-        - rm tmux-*.log
-        - cd engines/menu/
+        - git fetch
       panes:
-        - git st
+        - rvmsudo rake mongo:repair
 
   - guard:
      pre:
@@ -41,4 +40,4 @@ windows:
         - bundle exec rails s
         - zeus start
 
-  - zother:
+  - zother: rm tmux-*.log && echo "benito" | sudo -S /etc/init.d/tomcat7 restart
