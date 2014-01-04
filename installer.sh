@@ -23,5 +23,8 @@ mv ~/.rvm/gemsets/global.gems ~/.rvm/gemsets/global.gems.original
 ln -s ~/rvm/gemsets/global.gems ~/.rvm/gemsets/global.gems
 
 ln -s ~/.dotfiles/tmuxinator/ ~/.tmuxinator
+# customize chrome
+rm ~/.config/chromium/Default/User\ StyleSheets/Custom.css && ln -s ~/.dotfiles/chrome_custom.css ~/.config/chromium/Default/User\ StyleSheets/Custom.css
+rm ~/.config/google-chrome/Default/User\ StyleSheets/Custom.css && ln -s ~/.dotfiles/chrome_custom.css ~/.config/google-chrome/Default/User\ StyleSheets/Custom.css
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
