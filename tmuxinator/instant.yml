@@ -1,0 +1,22 @@
+# ~/.tmuxinator/.yml
+# you can make as many tabs as you wish...
+
+name: instant
+root: ~/workspace/yoolk_instant_website_v4/  # make default when create new window or panes
+socket_name: iw # Remove to use default socket
+#pre: sudo /etc/init.d/tomcat7 restart  # Runs before everything
+#pre_window: rbenv shell 2.0.0-p247 # Runs in each tab and pane
+tmux_options: -v -2 # Pass arguments to tmux
+windows:
+  - editor: vim
+
+  - git: git fetch
+
+  - guard: cd backend/
+
+  - railsc: cd backend/
+
+  - railss: cd backend && rails s
+
+  - zother: rm tmux-*.log
+

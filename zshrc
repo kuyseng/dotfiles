@@ -39,7 +39,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails3 git zsh-syntax-highlighting)
+plugins=(rails git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,7 +103,7 @@ alias ls='ls -G'
 alias tom=''
 alias mongo_repair='rvmsudo rake mongo:repair'
 alias turbo='tmuxinator turbo'
-alias spirit='tmuxinator turbo'
+alias instant='tmuxinator instant'
 
 # make vim in tmux with correct colortheme ##
 #alias tmux='tmux -2'
