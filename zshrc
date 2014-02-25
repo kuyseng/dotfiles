@@ -140,5 +140,5 @@ alias -s html='chromium-browser'
  # 1311140013: make these alias to prevent from accidently run shutdown or init 0 in remote server
  alias SD="sudo init 0 --verbose"
  alias RS="sudo init 6 --verbose" # == reboot
- alias xps="ssh -Y bentio@cambodia-yellowpages.dev"
+ alias xps="ssh -Y bentio@yellowpages-cambodia.dev"
  alias off="xset dpms force off"
