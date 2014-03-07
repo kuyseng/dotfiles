@@ -2,7 +2,7 @@
 # you can make as many tabs as you wish...
 
 name: turbo
-root: ~/workspace/yoolk_core/  # make default when create new window or panes
+root: /var/www/yoolk_core/  # make default when create new window or panes
 socket_name: turbo # Remove to use default socket
 #pre: sudo /etc/init.d/tomcat7 restart  # Runs before everything
 #pre_window: rbenv shell 2.0.0-p247 # Runs in each tab and pane
@@ -12,13 +12,19 @@ windows:
 
   - git: git fetch && rvmsudo rake mongo:repair
 
-  - guard:
+  - guard: rm tmux-*.log
 
   - railsc:
 
   - railss:
+      pre:
+        - cd .
       panes:
-        - zeus start
-        - zeus s
+        - zs
+        - sleep 15 && zsr
 
-  - zother: rm tmux-*.log && echo "benito" | sudo -S /etc/init.d/tomcat7 restart
+  - zother:
+      pre:
+         - cd ~
+         - rm tmux-*.log
+      panes: cd - && echo "benito" | sudo -S /etc/init.d/tomcat7 restart
