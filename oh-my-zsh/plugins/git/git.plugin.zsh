@@ -49,6 +49,7 @@ alias grba='git rebase --abort'
 compdef _git grba=git-rebase
 alias gb='git branch'
 compdef _git gb=git-branch
+alias gbrt='for ref in $(git for-each-ref --count=9 --sort=-committerdate --format="%(refname)" refs/heads/ ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '"'! a["'$0'"]++'"
 alias gba='git branch -a'
 compdef _git gba=git-branch
 alias gcount='git shortlog -sn'

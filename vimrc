@@ -290,6 +290,7 @@ map <leader>kk :set cursorcolumn!<cr>
 map <leader>s :w<cr>
 map <leader>sq :wq<cr>
 map <leader>q :q<cr>
+map <leader>b :Gblame<cr>
 
 vmap <leader>y :w !xclip -sel clip -i<cr><cr>
 " "*p is slow with a lot of data.
@@ -299,7 +300,7 @@ map <leader>p :r !xclip -sel clip -o<cr>
 :nnoremap <f5> :!ctags -R<CR>
 "I want to use shift+F5, <s-f5> it's not work
 ":nnoremap <leader>rr :!ctags -R . ~/.rvm/gems/ruby-1.9.3-p392@yoolk_core/<CR>
-:nnoremap <leader>rr :! ctags -R . ~/.rvm/gems/ruby-2.1.0@yoolk_portal/<CR>
+:nnoremap <leader>rr :! ctags -R . ~/.rvm/gems/ruby-2.0.0-p353@yoolk_portal/<CR>
 
 " Ctagbar @https://github.com/majutsushi/tagbar/wiki
 "= Ruby
