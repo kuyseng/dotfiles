@@ -2,8 +2,7 @@
 # you can make as many tabs as you wish...
 
 name: turbo
-root: ~/workspace/yoolk_portal/  # make default when create new window or panes
-socket_name: turbo # Remove to use default socket
+root: /var/www/yoolk_portal/  # make default when create new window or panes
 pre:  # Runs before everything
   - catalina start
   - redis-server /usr/local/etc/redis.conf
