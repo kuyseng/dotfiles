@@ -2,21 +2,41 @@
 # you can make as many tabs as you wish...
 
 name: instant
-root: ~/workspace/yoolk_instant_website_v4/  # make default when create new window or panes
+root: ~/workspace/yoolk_instant_website_office/  # make default when create new window or panes
 socket_name: iw # Remove to use default socket
-#pre: sudo /etc/init.d/tomcat7 restart  # Runs before everything
+pre:  # Runs before everything
+  - catalina start
+  - redis-server /usr/local/etc/redis.conf
 #pre_window: rbenv shell 2.0.0-p247 # Runs in each tab and pane
-tmux_options: -v -2 # Pass arguments to tmux
+tmux_options: -v -u # Pass arguments to tmux
 windows:
   - editor: vim
 
-  - git: git fetch
+  - git:
+      layout: even-horizontal
+      panes:
+        - git fetch # it auto fetch submodule yoolk_core
+        - cd yoolk_core
 
-  - guard: cd backend/
+  - guard:
+      layout: even-horizontal
+      panes:
+        # clear log
+        - rm log/*.*
+        # run test in yoolk_core need to move to that module
+        - cd yoolk_core
 
-  - railsc: cd backend/
+  - railsc: rm yoolk_core/spec/dummy/log/*.*
 
-  - railss: cd backend && rails s
+  - railss:
+      layout: even-vertical
+      panes:
+        - rails s -p 3001
+        - clear # for run sidekiq
 
-  - zother: rm tmux-*.log
+  - zother:
+      pre:
+        - cd ~
+        - rm tmux-*.log
+      panes: cd -; rm tmux-*.log
 

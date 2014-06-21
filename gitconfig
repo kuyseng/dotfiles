@@ -41,3 +41,4 @@
 	editor = vim
 [merge]
 	tool = vimdiff
+	conflictstyle = diff3

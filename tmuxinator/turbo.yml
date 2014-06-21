@@ -2,11 +2,13 @@
 # you can make as many tabs as you wish...
 
 name: turbo
-root: /var/www/yoolk_core/  # make default when create new window or panes
+root: ~/workspace/yoolk_portal/  # make default when create new window or panes
 socket_name: turbo # Remove to use default socket
-#pre: sudo /etc/init.d/tomcat7 restart  # Runs before everything
+pre:  # Runs before everything
+  - catalina start
+  - redis-server /usr/local/etc/redis.conf
 #pre_window: rbenv shell 2.0.0-p247 # Runs in each tab and pane
-tmux_options: -v -2 # Pass arguments to tmux
+tmux_options: -v -u # Pass arguments to tmux
 windows:
   - editor: vim
 
@@ -14,11 +16,9 @@ windows:
 
   - guard: rm tmux-*.log
 
-  - railsc:
+  - railsc: rm log/*.*
 
   - railss:
-      pre:
-        - cd .
       panes:
         - zs
         - sleep 15 && zsr
@@ -27,4 +27,4 @@ windows:
       pre:
          - cd ~
          - rm tmux-*.log
-      panes: cd - && echo "benito" | sudo -S /etc/init.d/tomcat7 restart
+      panes: cd -

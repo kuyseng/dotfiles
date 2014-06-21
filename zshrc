@@ -142,3 +142,6 @@ alias -s html='chromium-browser'
  alias RS="echo 'benito' | sudo -S init 6 --verbose" # == reboot
  alias xps="ssh -Y bentio@cambodia-yellowpages.dev"
  alias off="xset dpms force off"
+ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+ #ref: http://gmarik.info/blog/2010/10/08/ctags-on-OSX
+ alias ctags="`brew --prefix`/bin/ctags"

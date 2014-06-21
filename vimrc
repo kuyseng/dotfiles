@@ -47,6 +47,7 @@ Bundle 'unimpaired.vim'
 Bundle 'vim-indent-object'
 Bundle 'BufOnly.vim'
 Bundle 'repeat.vim'
+Bundle 'vim-quicktask'
 
 " *********************************************
 " *                 Settings                  *
@@ -292,9 +293,16 @@ map <leader>sq :wq<cr>
 map <leader>q :q<cr>
 map <leader>b :Gblame<cr>
 
-vmap <leader>y :w !xclip -sel clip -i<cr><cr>
-" "*p is slow with a lot of data.
-map <leader>p :r !xclip -sel clip -o<cr>
+" copy & paste for ubuntu
+"vmap <leader>y :w !xclip -sel clip -i<cr><cr>
+"map <leader>p :r !xclip -sel clip -o<cr>
+
+" copy & paste for Mac # ref: http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
+" not working
+vmap <leader>p :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+imap <leader>p <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+vmap <leader>y :w !pbcopy<CR><CR>
+
 
 "1309021051: map key to refresh ctag
 :nnoremap <f5> :!ctags -R<CR>
