@@ -129,7 +129,6 @@ alias ggpush='git push origin $(current_branch)'
 compdef ggpush=git
 alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
 compdef ggpnp=git
-alias ggrho='git reset --hard origin/$(current_branch)'
 
 # Pretty log messages
 function _git_log_prettily(){
@@ -160,5 +159,12 @@ alias gunignore='git update-index --no-assume-unchanged'
 # list temporarily ignored files
 alias gignored='git ls-files -v | grep "^[[:lower:]]"'
 
+# More local alias
+alias ggrho='git reset --hard origin/$(current_branch)'
+compdef ggrho=git
 
+alias grbom='git rebase origin/master'
+compdef grhom=git
 
+alias gsbu='git submodule update'
+compdef gsbu=git
