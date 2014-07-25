@@ -104,6 +104,7 @@ alias tom=''
 alias mongo_repair='rvmsudo rake mongo:repair'
 alias turbo='tmuxinator turbo'
 alias instant='tmuxinator instant'
+alias front='tmuxinator frontend'
 
 # make vim in tmux with correct colortheme ##
 #alias tmux='tmux -2'

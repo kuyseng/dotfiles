@@ -1,0 +1,19 @@
+name: Frontend
+root: /var/www/yoolk_instant_website_frontend/
+tmux_options: -v -u # Pass arguments to tmux
+windows:
+  - git:
+      layout: even-horizontal
+      panes:
+        - git fetch # it auto fetch submodule yoolk_core
+        - cd yoolk_core
+
+  - railss:
+      pre:
+        - rm tmux-*.log
+        - rm log/*.*
+        - rm yoolk_core/spec/dummy/log/*.*
+      panes: rails s -p 3002
+
+  - zother: cd ~; rm tmux-*.log
+

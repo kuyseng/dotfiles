@@ -1,7 +1,7 @@
 # ~/.tmuxinator/.yml
 # you can make as many tabs as you wish...
 
-name: turbo
+name: Portal
 root: /var/www/yoolk_portal/  # make default when create new window or panes
 pre:  # Runs before everything
   - catalina start
