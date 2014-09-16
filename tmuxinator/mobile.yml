@@ -1,0 +1,30 @@
+name: Mobile
+root: /var/www/yoolk_office_mobile/
+tmux_options: -v -u
+
+windows:
+  - editor: vim
+
+  - git: git fetch
+
+  - guard:
+      pre:
+         - rm tmux-*.log
+      panes: clear
+
+  - railsc:
+      pre:
+         - rm log/*.*
+      panes: clear
+
+  - railss:
+      pre:
+         - bundle install
+      panes: rails s -p 3002
+
+  - zother:
+      pre:
+         - cd ~
+         - rm tmux-*.log
+         - clear
+      panes: cd -

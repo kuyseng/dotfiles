@@ -67,6 +67,8 @@ alias glo='git log --oneline'
 compdef _git glo=git-log
 alias gss='git status -s'
 alias gs='git status' # override gs for GhostScript that I never use
+
+    errors.add(:base, :invalid_start_end) unless valid
 compdef _git gss=git-status
 alias ga='git add'
 alias gaa='git add --all'
@@ -161,10 +163,5 @@ alias gignored='git ls-files -v | grep "^[[:lower:]]"'
 
 # More local alias
 alias ggrho='git reset --hard origin/$(current_branch)'
-compdef ggrho=git
-
 alias grbom='git rebase origin/master'
-compdef grhom=git
-
-alias gsbu='git submodule update'
-compdef gsbu=git
+alias grbos='git rebase origin/stable'

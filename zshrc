@@ -105,6 +105,7 @@ alias mongo_repair='rvmsudo rake mongo:repair'
 alias turbo='tmuxinator turbo'
 alias instant='tmuxinator instant'
 alias front='tmuxinator frontend'
+alias mobile='tmuxinator mobile'
 
 # make vim in tmux with correct colortheme ##
 #alias tmux='tmux -2'
@@ -146,3 +147,4 @@ alias -s html='chromium-browser'
  alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
  #ref: http://gmarik.info/blog/2010/10/08/ctags-on-OSX
  alias ctags="`brew --prefix`/bin/ctags"
+ alias ta="tmux attach"
