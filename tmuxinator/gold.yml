@@ -1,0 +1,31 @@
+# ~/.tmuxinator/.yml
+# you can make as many tabs as you wish...
+
+name: gold
+root: ~/workspace/biz/   # make default when create new window or panes
+#pre: sudo /etc/init.d/tomcat7 restart  # Runs before everything
+pre:
+  - pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start  # start postgres
+  - rm tmux-*.log
+#pre_window: rbenv shell 2.0.0-p247 # Runs in each tab and pane
+tmux_options: -v -u # Pass arguments to tmux
+windows:
+  - editor:
+      pre:
+        - cd ~/workspace/biz/
+      panes:
+        - vim .
+
+  - git: git fetch; git st
+
+  - guard: rm tmux-*.log
+
+  - railsc:
+
+  - railss:
+      pre:
+        - cd ~/workspace/biz/
+      panes:
+        - bundle exec rails s
+
+  - zother:

@@ -7,20 +7,11 @@ windows:
 
   - git: git fetch
 
-  - guard:
-      pre:
-         - rm tmux-*.log
-      panes: clear
+  - guard: rm tmux-*.log
 
-  - railsc:
-      pre:
-         - rm log/*.*
-      panes: clear
+  - railsc: rm log/*.*
 
-  - railss:
-      pre:
-         - bundle install
-      panes: rails s -p 3002
+  - railss: bundle install; rails s -p 3002
 
   - zother:
       pre:
