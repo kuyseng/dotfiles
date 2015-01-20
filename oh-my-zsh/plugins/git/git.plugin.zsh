@@ -1,7 +1,4 @@
 # Aliases
-alias g='git'
-compdef g=git
-alias gst='git status'
 compdef _git gst=git-status
 alias gd='git diff'
 compdef _git gd=git-diff
@@ -79,6 +76,7 @@ alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 alias gclean='git reset --hard && git clean -dfx'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
+alias gph='git push heroku master'
 
 #remove the gf alias
 #alias gf='git ls-files | grep'

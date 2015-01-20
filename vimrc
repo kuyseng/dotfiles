@@ -48,6 +48,7 @@ Bundle 'vim-indent-object'
 Bundle 'BufOnly.vim'
 Bundle 'repeat.vim'
 Bundle 'vim-quicktask'
+Bundle 'loremipsum'
 
 " *********************************************
 " *                 Settings                  *
@@ -305,7 +306,7 @@ vmap <leader>y :w !pbcopy<CR><CR>
 
 
 "1309021051: map key to refresh ctag
-:nnoremap <f5> :!ctags -R<CR>
+:nnoremap <f5> :!ctags -R .<CR>
 "I want to use shift+F5, <s-f5> it's not work
 ":nnoremap <leader>rr :!ctags -R . ~/.rvm/gems/ruby-1.9.3-p392@yoolk_core/<CR>
 :nnoremap <leader>rr :! ctags -R . ~/.rvm/gems/ruby-2.0.0-p353@yoolk_portal/<CR>

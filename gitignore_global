@@ -2,3 +2,4 @@ tags
 logs/*
 tmp_*
 ztmps/*
+.DS_Store

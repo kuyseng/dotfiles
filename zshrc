@@ -107,6 +107,7 @@ alias instant='tmuxinator instant'
 alias front='tmuxinator frontend'
 alias mobile='tmuxinator mobile'
 alias gold='tmuxinator gold'
+alias biz='tmuxinator gold'
 
 # make vim in tmux with correct colortheme ##
 #alias tmux='tmux -2'
@@ -149,3 +150,6 @@ alias -s html='chromium-browser'
  #ref: http://gmarik.info/blog/2010/10/08/ctags-on-OSX
  alias ctags="`brew --prefix`/bin/ctags"
  alias ta="tmux attach"
+ alias gph='git push heroku master'
+ alias h='heroku'
+ alias staging='ssh -i ~/staging-ec2-keypair.pem ubuntu@cambodiastaging.yoolk.com -p 1234'
