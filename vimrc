@@ -49,6 +49,9 @@ Bundle 'BufOnly.vim'
 Bundle 'repeat.vim'
 Bundle 'vim-quicktask'
 Bundle 'loremipsum'
+Bundle 'slim-template/vim-slim.git'
+"https://wakatime.com  "still not stable in this plugin
+"Bundle 'wakatime/vim-wakatime'
 
 " *********************************************
 " *                 Settings                  *
@@ -340,3 +343,6 @@ if executable('coffeetags')
         \ }
         \ }
 endif
+
+"quicktask
+let g:quicktask_autosave = 1

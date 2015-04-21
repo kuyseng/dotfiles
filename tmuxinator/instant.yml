@@ -2,7 +2,7 @@
 # you can make as many tabs as you wish...
 
 name: Office
-root: /var/www/yoolk_instant_website_office/  # make default when create new window or panes
+root: /var/www/yoolk_office/  # make default when create new window or panes
 pre:  # Runs before everything
   - catalina start
   - redis-server /usr/local/etc/redis.conf
@@ -10,32 +10,27 @@ pre:  # Runs before everything
 tmux_options: -v -u # Pass arguments to tmux
 windows:
   - editor: vim
-
   - git:
       layout: even-horizontal
       panes:
-        - git fetch # it auto fetch submodule yoolk_core
-        - cd yoolk_core
+        - rake tmp:clear; git fetch; clear
+        - cd yoolk_engines; clear
 
   - guard:
       layout: even-horizontal
+      pre:
+        - rm log/*.*
       panes:
         # clear log
-        - rm log/*.*
         # run test in yoolk_core need to move to that module
-        - cd yoolk_core
+        - cd yoolk_engines; clear;
 
-  - railsc: rm yoolk_core/spec/dummy/log/*.*
+  - railsc:
 
   - railss:
       layout: even-vertical
       panes:
         - rails s -p 3001
-        - clear # for run sidekiq
 
-  - zother:
-      pre:
-        - cd ~
-        - rm tmux-*.log
-      panes: cd -; rm tmux-*.log
+  - zother: cd -; rm tmux-*.log
 

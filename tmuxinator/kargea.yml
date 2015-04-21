@@ -1,0 +1,21 @@
+# ~/.tmuxinator/.yml
+# you can make as many tabs as you wish...
+
+name: Kargea
+root: ~/workspace/kargea/  # make default when create new window or panes
+pre:
+  - pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start  # start postgres
+  - rm tmux-*.log
+tmux_options: -v -u # Pass arguments to tmux
+windows:
+  - editor: vim
+  - git: rake tmp:clear; git fetch; clear
+
+  - guard: rm log/*.*
+
+  - railsc: rm tmux-*.log
+
+  - railss: rails s
+
+  - zother: cd ~; rm tmux-*.log
+

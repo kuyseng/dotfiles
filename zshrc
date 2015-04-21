@@ -72,7 +72,7 @@ export EDITOR="vim"
 #RPROMPT='${vim_mode}'
 
 #end
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:~/.node/bin/ # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # config use vim in zsh
@@ -105,9 +105,11 @@ alias mongo_repair='rvmsudo rake mongo:repair'
 alias turbo='tmuxinator turbo'
 alias instant='tmuxinator instant'
 alias front='tmuxinator frontend'
+alias sandbox='tmuxinator sandbox'
 alias mobile='tmuxinator mobile'
 alias gold='tmuxinator gold'
 alias biz='tmuxinator gold'
+alias kargea='tmuxinator kargea'
 
 # make vim in tmux with correct colortheme ##
 #alias tmux='tmux -2'
@@ -150,6 +152,6 @@ alias -s html='chromium-browser'
  #ref: http://gmarik.info/blog/2010/10/08/ctags-on-OSX
  alias ctags="`brew --prefix`/bin/ctags"
  alias ta="tmux attach"
- alias gph='git push heroku master'
  alias h='heroku'
+ alias g='git'
  alias staging='ssh -i ~/staging-ec2-keypair.pem ubuntu@cambodiastaging.yoolk.com -p 1234'

@@ -63,20 +63,24 @@ compdef _git glgga=git-log
 alias glo='git log --oneline'
 compdef _git glo=git-log
 alias gss='git status -s'
+alias gst='git status'
 alias gs='git status' # override gs for GhostScript that I never use
 
-    errors.add(:base, :invalid_start_end) unless valid
 compdef _git gss=git-status
 alias ga='git add'
 alias gaa='git add --all'
 compdef _git ga=git-add
 alias gm='git merge'
 compdef _git gm=git-merge
-alias grh='git reset HEAD'
-alias grhh='git reset HEAD --hard'
+alias grh='git reset --hard'
+alias grH='git reset HEAD'
+alias grhh='git reset --hard HEAD'
 alias gclean='git reset --hard && git clean -dfx'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gph='git push heroku master'
+alias gsu='git submodule update'
+alias gfm='git fetch origin master'
+alias gfs='git fetch origin stable'
 
 #remove the gf alias
 #alias gf='git ls-files | grep'

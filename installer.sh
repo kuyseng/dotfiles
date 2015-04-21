@@ -19,7 +19,7 @@ ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 rm ~/.oh-my-zsh/themes/aussiegeek.zsh-theme
 ln -s ~/.dotfiles/oh-my-zsh/themes/aussiegeek.zsh-theme ~/.oh-my-zsh/themes/aussiegeek.zsh-theme
 rm ~/.oh-my-zsh/plugins/git/git.plugin.zsh
-cp -f ~/.dotfiles/oh-my-zsh/plugins/git/git.plugin.zsh ~/.oh-my-zsh/plugins/git/git.plugin.zsh
+ln -s ~/.dotfiles/oh-my-zsh/plugins/git/git.plugin.zsh ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 
 mv ~/.rvm/gemsets/global.gems ~/.rvm/gemsets/global.gems.original
 ln -s ~/rvm/gemsets/global.gems ~/.rvm/gemsets/global.gems

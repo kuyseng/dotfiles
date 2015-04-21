@@ -1,13 +1,13 @@
-name: InstantWebsite
-root: /var/www/yoolk_instant_website/
+name: IW-Sandbox
+root: /var/www/yoolk_instant_website_sandbox/
 tmux_options: -v -u # Pass arguments to tmux
 windows:
   - editor: vim
   - git:
       layout: even-horizontal
       panes:
-        - rake tmp:clear; git fetch; clear
-        - cd yoolk_engines; clear
+        - git fetch; clear
+        - cd yoolk_themes; git fetch; clear
 
   - guard:
       layout: even-horizontal
@@ -24,7 +24,7 @@ windows:
       pre:
         - rm tmux-*.log
         - rm log/*.*
-      panes: rails s -p 3002
+      panes: rails s -p 3003
 
   - zother: cd ~; rm tmux-*.log
 
