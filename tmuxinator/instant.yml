@@ -19,6 +19,8 @@ windows:
   - guard:
       layout: even-horizontal
       pre:
+        - rvm cleanup all
+        - bundle clean --force
         - rm log/*.*
       panes:
         # clear log
@@ -30,7 +32,8 @@ windows:
   - railss:
       layout: even-vertical
       panes:
-        - rails s -p 3001
+        - zs
+        - sleep 10 && zsr -p 3001
 
   - zother: cd -; rm tmux-*.log
 

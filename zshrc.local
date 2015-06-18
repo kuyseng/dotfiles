@@ -1,0 +1,33 @@
+#### General ####
+
+# 1311140013: make these alias to prevent from accidently run shutdown or init 0 in remote server
+alias SD="echo 'benito' | sudo -S init 0 --verbose"
+alias RS="echo 'benito' | sudo -S init 6 --verbose" # == reboot
+alias xps="ssh -Y bentio@cambodia-yellowpages.dev"
+alias off="xset dpms force off"
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+#ref: http://gmarik.info/blog/2010/10/08/ctags-on-OSX
+alias ctags="`brew --prefix`/bin/ctags"
+alias ta="tmux attach"
+alias h='heroku'
+alias staging='ssh -i ~/staging-ec2-keypair.pem ubuntu@cambodiastaging.yoolk.com -p 1234'
+
+
+#### Git ####
+alias ggrho='git reset --hard origin/$(current_branch)'
+alias grbom='git rebase origin/master'
+alias grbiom='git rebase -i origin/master'
+alias grbos='git rebase origin/stable'
+alias ggf='git fetch origin $(current_branch)'
+alias gcs='git checkout stable'
+alias gfm='git fetch origin master'
+alias gfs='git fetch origin stable'
+alias gph='git push heroku master'
+alias gsu='git submodule update'
+
+alias gs='git status' # override gs for GhostScript that I never use
+alias gdc='git diff --cached'
+
+alias grH='git reset HEAD'
+#alias grh='git reset --hard'
+#alias grhh='git reset --hard HEAD'

@@ -346,3 +346,6 @@ endif
 
 "quicktask
 let g:quicktask_autosave = 1
+
+"autocomplete end html tag: http://vim.wikia.com/wiki/Auto_closing_an_HTML_tag
+:iabbrev <// </<C-X><C-O>

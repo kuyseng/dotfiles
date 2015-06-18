@@ -24,6 +24,7 @@ windows:
 
   - zother:
       pre:
+         - bundle clean --force
          - cd ~
          - rm tmux-*.log
       panes: cd -

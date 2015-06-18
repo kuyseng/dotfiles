@@ -12,6 +12,7 @@ windows:
   - guard:
       layout: even-horizontal
       pre:
+        - bundle clean --force
         - rm log/*.*
       panes:
         # clear log

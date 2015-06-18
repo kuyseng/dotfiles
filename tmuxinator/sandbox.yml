@@ -12,13 +12,14 @@ windows:
   - guard:
       layout: even-horizontal
       pre:
+        - bundle clean --force
         - rm log/*.*
       panes:
         # clear log
         # run test in yoolk_core need to move to that module
         - cd yoolk_engines; clear;
 
-  - railsc:
+  - railsc: find yoolk_themes -maxdepth 1 -mindepth 1 -type d -not -name '.*' -exec ln -sv ../../'{}' app/themes \\;
 
   - railss:
       pre:

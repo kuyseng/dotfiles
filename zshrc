@@ -39,7 +39,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails git zsh-syntax-highlighting zsh-history-substring-search zeus bundler battery postgres)
+plugins=(rails bower git zsh-syntax-highlighting zsh-history-substring-search zeus bundler battery postgres)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,6 +107,9 @@ alias instant='tmuxinator instant'
 alias front='tmuxinator frontend'
 alias sandbox='tmuxinator sandbox'
 alias mobile='tmuxinator mobile'
+alias groow_mobile='tmuxinator groow_mobile'
+alias groow_website='tmuxinator groow_website'
+alias liquid_doc='tmuxinator liquid_doc'
 alias gold='tmuxinator gold'
 alias biz='tmuxinator gold'
 alias kargea='tmuxinator kargea'
@@ -142,16 +145,9 @@ alias -s html='chromium-browser'
    man --pager="less -p'^ *$@ '" zshall
  fi
        }
- #
- # 1311140013: make these alias to prevent from accidently run shutdown or init 0 in remote server
- alias SD="echo 'benito' | sudo -S init 0 --verbose"
- alias RS="echo 'benito' | sudo -S init 6 --verbose" # == reboot
- alias xps="ssh -Y bentio@cambodia-yellowpages.dev"
- alias off="xset dpms force off"
- alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
- #ref: http://gmarik.info/blog/2010/10/08/ctags-on-OSX
- alias ctags="`brew --prefix`/bin/ctags"
- alias ta="tmux attach"
- alias h='heroku'
- alias g='git'
- alias staging='ssh -i ~/staging-ec2-keypair.pem ubuntu@cambodiastaging.yoolk.com -p 1234'
+
+export PATH="/usr/local/bin:$PATH"
+
+# follow thoughtbot local.config
+# Local config
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

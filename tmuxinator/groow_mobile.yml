@@ -1,5 +1,5 @@
-name: Mobile
-root: /var/www/yoolk_office_mobile/
+name: Groow Mobile
+root: /var/www/groow_mobile/
 tmux_options: -v -u
 
 windows:
@@ -15,7 +15,14 @@ windows:
 
   - railsc: rm log/*.*
 
-  - railss: bundle install; bundle clean --force; rails s -p 3002
+  - railss:
+      pre:
+        - bundle install
+        - bundle clean --force
+      panes:
+        - rails s -p 3005
+        - redis-server
+        - sidekiq -q v4_groow_mailer -q v4_groow_clone
 
   - zother:
       pre:

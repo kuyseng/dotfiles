@@ -1,0 +1,11 @@
+name: Liquid-Doc
+root: /var/www/liquid-documentation/
+tmux_options: -v -u # Pass arguments to tmux
+windows:
+  - editor: vim
+  - git: git fetch; clear
+
+  - jekyll: jekyll serve --watch
+
+  - zother: rm tmux-*.log
+
