@@ -17,6 +17,7 @@ ln -s ~/.dotfiles/ackrc ~/.ackrc
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/zshrc.local ~/.zshrc.local
 ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
+ln -s ~/.dotfiles/gitmessage ~/.gitmessage
 rm ~/.oh-my-zsh/themes/aussiegeek.zsh-theme
 ln -s ~/.dotfiles/oh-my-zsh/themes/aussiegeek.zsh-theme ~/.oh-my-zsh/themes/aussiegeek.zsh-theme
 rm ~/.oh-my-zsh/plugins/git/git.plugin.zsh

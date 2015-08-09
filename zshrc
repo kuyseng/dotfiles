@@ -102,17 +102,6 @@ alias ls='ls -G'
 
 alias tom=''
 alias mongo_repair='rvmsudo rake mongo:repair'
-alias turbo='tmuxinator turbo'
-alias instant='tmuxinator instant'
-alias front='tmuxinator frontend'
-alias sandbox='tmuxinator sandbox'
-alias mobile='tmuxinator mobile'
-alias groow_mobile='tmuxinator groow_mobile'
-alias groow_website='tmuxinator groow_website'
-alias liquid_doc='tmuxinator liquid_doc'
-alias gold='tmuxinator gold'
-alias biz='tmuxinator gold'
-alias kargea='tmuxinator kargea'
 
 # make vim in tmux with correct colortheme ##
 #alias tmux='tmux -2'

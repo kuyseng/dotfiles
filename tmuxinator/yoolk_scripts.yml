@@ -1,0 +1,16 @@
+# ~/.tmuxinator/.yml
+# you can make as many tabs as you wish...
+
+name: Print
+root: /var/www/yoolk_scripts/  # make default when create new window or panes
+tmux_options: -v -u # Pass arguments to tmux
+windows:
+  - editor: vim
+
+  - git: git fetch; rm tmux-*.log
+
+  - zother:
+      pre:
+         - cd ~
+         - rm tmux-*.log
+      panes: cd -

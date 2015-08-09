@@ -12,6 +12,20 @@ alias ta="tmux attach"
 alias h='heroku'
 alias staging='ssh -i ~/staging-ec2-keypair.pem ubuntu@cambodiastaging.yoolk.com -p 1234'
 
+#### Tmuxinator ####
+alias turbo='tmuxinator turbo'
+alias instant='tmuxinator instant'
+alias front='tmuxinator frontend'
+alias sandbox='tmuxinator sandbox'
+alias mobile='tmuxinator mobile'
+alias groow_mobile='tmuxinator groow_mobile'
+alias groow_website='tmuxinator groow_website'
+alias yoolk_scripts='tmuxinator yoolk_scripts'
+alias liquid_doc='tmuxinator liquid_doc'
+
+alias gold='tmuxinator gold'
+alias biz='tmuxinator gold'
+alias kargea='tmuxinator kargea'
 
 #### Git ####
 alias ggrho='git reset --hard origin/$(current_branch)'
