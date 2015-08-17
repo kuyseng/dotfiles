@@ -32,7 +32,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'sandeepravi/refactor-rails.vim'
 Bundle 'terryma/vim-expand-region'
-"Bundle 'ngmy/vim-rubocop'
+Bundle 'ngmy/vim-rubocop'
 Bundle 'git://gist.github.com/287147.git'
 
 Bundle 'vim-ruby/vim-ruby'
@@ -240,6 +240,9 @@ map <leader><leader> :RuboCop<cr>
 "# ctrlp.vim
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*   " for Linux/MacOSX
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+"http://vi.stackexchange.com/questions/2724/how-to-add-multiple-git-projects-to-ctrl-p-search-path
+let g:ctrlp_root_markers=['.root']
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:100'
 
 " vim-gitgutter
 highlight clear SignColumn
@@ -302,11 +305,9 @@ map <leader>b :Gblame<cr>
 "map <leader>p :r !xclip -sel clip -o<cr>
 
 " copy & paste for Mac # ref: http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
-" not working
-vmap <leader>p :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
-imap <leader>p <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+vmap <leadaer>p :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+imap <leadaer>p <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 vmap <leader>y :w !pbcopy<CR><CR>
-
 
 "1309021051: map key to refresh ctag
 :nnoremap <f5> :!ctags -R .<CR>
