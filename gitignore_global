@@ -1,4 +1,6 @@
+
 logs/*
 tmp_*
 ztmps/*
 .DS_Store
+.root

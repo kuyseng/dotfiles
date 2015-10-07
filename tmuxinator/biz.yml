@@ -1,0 +1,26 @@
+name: Biz
+root: ~/vagrant/
+pre:
+  - homestead up
+tmux_options: -v -2 # Pass arguments to tmux
+windows:
+  - editor:
+      pre:
+        - cd ~/vagrant/Homestead/Code/mhh669
+      panes:
+        - vim .
+
+  - git:
+      pre:
+        - rm tmux-*.log
+      panes:
+        - cd ~/vagrant/Homestead/Code/mhh669
+
+  - ssh:
+      pre:
+        - homestead ssh
+      panes:
+        - cd Code/mhh669/
+        - cd Code/mhh669/
+
+  - zother:

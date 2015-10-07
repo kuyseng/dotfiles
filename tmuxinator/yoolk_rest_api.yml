@@ -1,0 +1,20 @@
+# ~/.tmuxinator/.yml
+# you can make as many tabs as you wish...
+
+name: yoolk_rest_api
+root: /var/www/yoolk_rest_api/  # make default when create new window or panes
+pre:
+  - redis-server /usr/local/etc/redis.conf
+tmux_options: -v -u # Pass arguments to tmux
+windows:
+  - editor: vim
+  - git:
+
+  - guard: rm log/*.*
+
+  - railsc: rvm cleanup all && bundle clean --force
+
+  - railss:
+
+  - zother: cd -; rm tmux-*.log
+

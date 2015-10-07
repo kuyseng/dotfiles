@@ -75,6 +75,12 @@ export EDITOR="vim"
 PATH=$PATH:$HOME/.rvm/bin:~/.node/bin/ # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+# add for android sdk
+PATH=$PATH:~/Library/Android/sdk/tools/:~/Library/Android/sdk/platform-tools/
+
+# add for laravel
+PATH=$PATH:~/.composer/vendor/bin
+
 # config use vim in zsh
 #bindkey -v
 #bindkey -M viins 'jj' vi-cmd-mode

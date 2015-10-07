@@ -10,7 +10,12 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias ctags="`brew --prefix`/bin/ctags"
 alias ta="tmux attach"
 alias h='heroku'
+alias scr='screen'
 alias staging='ssh -i ~/staging-ec2-keypair.pem ubuntu@cambodiastaging.yoolk.com -p 1234'
+alias production='ssh -i ~/yoolk-production-keypair-2015.pem ubuntu@ec2-54-251-203-243.ap-southeast-1.compute.amazonaws.com -p 1234'
+#https://koding.com
+alias koding='ssh kuyseng@ukkke23c9992.kuyseng.koding.io'
+alias v='vagrant'
 
 #### Tmuxinator ####
 alias turbo='tmuxinator turbo'
@@ -22,9 +27,10 @@ alias groow_mobile='tmuxinator groow_mobile'
 alias groow_website='tmuxinator groow_website'
 alias yoolk_scripts='tmuxinator yoolk_scripts'
 alias liquid_doc='tmuxinator liquid_doc'
+alias api='tmuxinator yoolk_rest_api'
 
 alias gold='tmuxinator gold'
-alias biz='tmuxinator gold'
+alias biz='tmuxinator biz'
 alias kargea='tmuxinator kargea'
 
 #### Git ####
