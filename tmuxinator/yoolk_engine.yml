@@ -1,0 +1,22 @@
+# ~/.tmuxinator/.yml
+# you can make as many tabs as you wish...
+
+name: Yoolk Engines
+root: /var/www/yoolk_engines/  # make default when create new window or panes
+tmux_options: -v -u # Pass arguments to tmux
+windows:
+  - editor: vim
+
+  - git: git fetch
+
+  - rspec: rm tmux-*.log
+
+  - rc: cd test_app/
+
+  - zother:
+      pre:
+         - rvm cleanup all
+         - bundle clean --force
+         - cd ~
+         - rm tmux-*.log
+      panes: cd -

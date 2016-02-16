@@ -18,6 +18,7 @@ windows:
   - git:
       pre:
         - cd ~/workspace/yoolk_core/
+        - rvm cleanup all
         - bundle clean --force
         - cd engines/menu/
       panes:

@@ -72,11 +72,12 @@ export EDITOR="vim"
 #RPROMPT='${vim_mode}'
 
 #end
-PATH=$PATH:$HOME/.rvm/bin:~/.node/bin/ # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:~/.node/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # add for android sdk
-PATH=$PATH:~/Library/Android/sdk/tools/:~/Library/Android/sdk/platform-tools/
+# comment cus brew doctor warning to delete
+#PATH=$PATH:~/Library/Android/sdk/tools/:~/Library/Android/sdk/platform-tools/
 
 # add for laravel
 PATH=$PATH:~/.composer/vendor/bin
@@ -146,3 +147,4 @@ export PATH="/usr/local/bin:$PATH"
 # follow thoughtbot local.config
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+export PATH="/usr/local/sbin:$PATH"

@@ -24,6 +24,7 @@ windows:
 
   - zother:
       pre:
+         - rvm cleanup all
          - bundle clean --force
          - cd ~
          - rm tmux-*.log
