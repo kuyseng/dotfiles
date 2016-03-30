@@ -16,6 +16,7 @@ alias production='ssh -i ~/yoolk-production-keypair-2015.pem ubuntu@ec2-54-151-1
 #https://koding.com
 alias koding='ssh kuyseng@ukkke23c9992.kuyseng.koding.io'
 alias v='vagrant'
+alias rct='rails c test'
 
 #### Tmuxinator ####
 alias turbo='tmuxinator turbo'
@@ -29,11 +30,14 @@ alias yoolk_scripts='tmuxinator yoolk_scripts'
 alias liquid_doc='tmuxinator liquid_doc'
 alias api='tmuxinator yoolk_rest_api'
 alias engine='tmuxinator yoolk_engine'
+alias engine_print='tmuxinator yoolk_engine_print'
+alias worker='tmuxinator yoolk_worker'
 
 alias guddiz_api='tmuxinator guddiz_api'
 alias gold='tmuxinator gold'
 alias biz='tmuxinator biz'
 alias kargea='tmuxinator kargea'
+alias knit='tmuxinator knit'
 
 #### Git ####
 alias ggrho='git reset --hard origin/$(current_branch)'
@@ -43,6 +47,7 @@ alias grbos='git rebase origin/stable'
 alias ggf='git fetch origin $(current_branch)'
 alias ggrbo='git rebase origin/$(current_branch)'
 alias gcs='git checkout stable'
+alias gcd='git checkout develop'
 alias gfm='git fetch origin master'
 alias gfs='git fetch origin stable'
 alias gph='git push heroku master'

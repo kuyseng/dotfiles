@@ -9,6 +9,10 @@ tmux_options: -v -u # Pass arguments to tmux
 windows:
   - editor: vim
   - git:
+      layout: even-horizontal
+      panes:
+        - rake tmp:clear; git fetch; clear
+        - cd yoolk_engines; clear
 
   - guard: rm log/*.*
 

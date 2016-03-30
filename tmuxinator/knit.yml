@@ -1,0 +1,40 @@
+# ~/.tmuxinator/.yml
+# you can make as many tabs as you wish...
+
+name: Knit
+root: /var/www/knit/  # make default when create new window or panes
+pre:  # Runs before everything
+  - redis-server /usr/local/etc/redis.conf
+
+  - open '/Applications/Upwork.app'
+  # Open need websites:
+  - open 'https://bitbucket.org/ngaike/knit/commits/all'
+  - open 'https://trello.com/b/66aLp6Ep/knit-back-end'
+  - open 'https://semaphoreci.com/knit/knit'
+  - open 'https://app.honeybadger.io/projects/47199/faults?q=-is%3Aresolved+-is%3Aignored'
+  - open 'http://empower.knitapps.com/' # staging
+  - sleep 10; open -a '/Applications/Google Chrome.app' 'http://localhost:3000'  # wait till server up
+
+#pre_window: rbenv shell 2.0.0-p247 # Runs in each tab and pane
+tmux_options: -v -u # Pass arguments to tmux
+windows:
+  - editor: vim
+
+  - git: git fetch
+
+  - guard: rm tmux-*.log
+
+  - railsc: rm log/*.*
+
+  - railss:
+      panes:
+        - rails s
+        - bundle exec sidekiq -C config/settings/sidekiq_config.yml
+
+  - zother:
+      pre:
+         - rvm cleanup all
+         - bundle clean --force
+         - cd ~
+         - rm tmux-*.log
+      panes: cd -

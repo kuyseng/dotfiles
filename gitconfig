@@ -39,8 +39,13 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
+	autocrlf = input
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
+[push]
+	default = simple
 [commit]
   template = ~/.gitmessage
+[credential]
+	helper = osxkeychain

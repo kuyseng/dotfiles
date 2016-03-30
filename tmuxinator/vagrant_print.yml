@@ -1,0 +1,36 @@
+# ~/.tmuxinator/.yml
+# you can make as many tabs as you wish...
+
+name: vagrant_print
+root: ~/vagrant/YoolkPrint/  # make default when create new window or panes
+pre:  # Runs before everything
+  - vagrant up
+tmux_options: -v -u # Pass arguments to tmux
+windows:
+  - editor:
+     pre:
+       - cd www/yoolk_worker
+       - vim
+  - git:
+     pre:
+       - cd www/yoolk_worker
+     layout: even-horizontal
+     panes:
+       - ls
+       - cd yoolk_engines/
+
+
+  - guard: rm log/*.*
+
+  - railsc:
+     pre:
+       - vagrant ssh
+       - rvm cleanup all && bundle clean --force
+
+  - railss:
+
+  - zother:
+     pre:
+       - cd www
+       - rm tmux-*.log
+

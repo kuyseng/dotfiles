@@ -4,6 +4,8 @@
 name: Portal
 root: /var/www/yoolk_portal/  # make default when create new window or panes
 pre:  # Runs before everything
+  - open 'https://trello.com/b/V1skNsiv/portal'
+  - open 'http://yp.dev:3000'
   - catalina start
   - redis-server /usr/local/etc/redis.conf
 #pre_window: rbenv shell 2.0.0-p247 # Runs in each tab and pane
@@ -18,9 +20,10 @@ windows:
   - railsc: rm log/*.*
 
   - railss:
+      pre:
       panes:
         - zs
-        - sleep 15 && zsr
+        - sleep 10 && zsr
 
   - zother:
       pre:

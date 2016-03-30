@@ -52,6 +52,18 @@ Bundle 'loremipsum'
 Bundle 'slim-template/vim-slim.git'
 "https://wakatime.com  "still not stable in this plugin
 "Bundle 'wakatime/vim-wakatime'
+"https://github.com/SirVer/ultisnips " it's awesome
+"Bundle 'UltiSnips'
+
+Bundle 'xsbeats/vim-blade'
+" ReactJS
+" https://github.com/mxw/vim-jsx
+Bundle 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+
+"Add MarkDown syntax
+Bundle 'plasticboy/vim-markdown'
+"https://github.com/hallison/vim-rdoc
 
 " *********************************************
 " *                 Settings                  *
@@ -305,9 +317,12 @@ map <leader>b :Gblame<cr>
 "map <leader>p :r !xclip -sel clip -o<cr>
 
 " copy & paste for Mac # ref: http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
-vmap <leadaer>p :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
-imap <leadaer>p <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
-vmap <leader>y :w !pbcopy<CR><CR>
+"vmap <leadaer>p :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+"imap <leadaer>p <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+"vmap <leader>y :w !pbcopy<CR><CR>
+vmap <C-v> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+imap <C-v> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+nmap <C-c> :w !pbcopy<CR><CR>
 
 "1309021051: map key to refresh ctag
 :nnoremap <f5> :!ctags -R .<CR>

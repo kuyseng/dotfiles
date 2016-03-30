@@ -18,13 +18,13 @@ IRB.conf[:PROMPT][:CUSTOM] = {
   :RETURN => "=> %s\n"
 }
 IRB.conf[:PROMPT_MODE] = :CUSTOM
-IRB.conf[:AT_EXIT] << Proc.new {puts "Bye, see you again soon :-)"}
+IRB.conf[:AT_EXIT] << Proc.new {puts "Great things happen!!! :-)"}
 
 def try_require(gem_name)
   begin
   require gem_name
   yield if block_given?
-  
+
   rescue ScriptError
     puts "#{gem_name} has no found."
   end
@@ -48,7 +48,7 @@ end
 module TweakIRB
   def self.included(base)
     base.send(:include, IO)
-    base.send(:include, Documentation)
+    base.send(:include, MyDocumentation)
     base.send(:include, Rails)
     base.send(:include, Core)
   end
@@ -83,7 +83,7 @@ module TweakIRB
     end
   end
 
-  module Documentation
+  module MyDocumentation
     RI_DELEMITER = "ri_"
 
     def ri(method = nil)
@@ -169,7 +169,7 @@ class Object
     require 'benchmark'
 
     Benchmark.bmbm do |b|
-      b.report {repetitions.times &block} 
+      b.report {repetitions.times &block}
     end
     nil
   end
